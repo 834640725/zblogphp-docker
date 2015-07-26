@@ -10,8 +10,8 @@
 3. 其它随意填写。
 
 ### 非云服务
-1. [安装Docker](http://yeasy.gitbooks.io/docker_practice/content/install/index.html)。
-2. 
+首先，需要[安装Docker](http://yeasy.gitbooks.io/docker_practice/content/install/index.html)。
+其次，
 ```bash
 sudo docker pull index.alauda.cn/zsxsoft/zblogphp
 sudo docker run -t -p 80:80 -p 3306:3306 index.alauda.cn/zsxsoft/zblogphp
