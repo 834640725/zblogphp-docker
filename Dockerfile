@@ -23,6 +23,9 @@ RUN rm /app/index.php -f
 RUN rm /app/phpinfo.exe -f 
 ADD index.php /app/index.php
 
+## Set /app as volume
+VOLUME /app
+
 ## Open Ports
 EXPOSE 80 3306
 CMD ["/run.sh"]
