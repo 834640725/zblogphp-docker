@@ -3,8 +3,9 @@ MAINTAINER zsx <zsx@zsxsoft.com>
 
 # Install plugins
 RUN apt-get update && \
-  apt-get -y install php5-gd && \
-  rm -rf /var/lib/apt/lists/*
+  apt-get -y install php5-gd php5-curl wget && \
+  rm -rf /var/lib/apt/lists/* && \
+  apt-get clean
 
 ## Download Z-BlogPHP
 RUN cd /app && wget http://update.zblogcn.com/zblogphp/install.tar.gz && tar -xf ./install.tar.gz
