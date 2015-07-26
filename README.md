@@ -12,4 +12,4 @@
 2. 数据库主机``localhost``，用户名``root``，密码空，数据库名``zbphp``，其他任意。如图：
 ![Install](images/image-install.png)
 3. 安装完成，尽情享受吧！
-![Finished](images/image-admin.pnh)
+![Finished](images/image-admin.png)
