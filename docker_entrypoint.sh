@@ -6,7 +6,6 @@ if ! [ -e /app/zb_users/c_option.php ]; then
 	cd /app
 	wget http://update.zblogcn.com/zblogphp/install.tar.gz
 	tar -xf ./install.tar.gz
-	rm index.php
 	rm install.tar.gz
 	cat > index.php <<-'EOF'
 	<?php 
