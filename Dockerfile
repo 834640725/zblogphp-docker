@@ -7,25 +7,16 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/* && \
   apt-get clean 
 
-## Download Z-BlogPHP
-RUN cd /app && wget http://update.zblogcn.com/zblogphp/install.tar.gz && tar -xf ./install.tar.gz
-
-## Modify permissions
-RUN chown -R www-data:www-data /app /var/www/html
+## Set /app as volume
+VOLUME /app
 
 ## Add Database
 ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
 ADD create_db.sh /create_db.sh
+ADD docker_entrypoint.sh /entrypoint.sh
 RUN chmod +x /*.sh
-
-## Remove index & phpinfo
-RUN rm /app/index.php -f
-RUN rm /app/phpinfo.exe -f 
-ADD index.php /app/index.php
-
-## Set /app as volume
-VOLUME /app
 
 ## Open Ports
 EXPOSE 80 3306
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/run.sh"]
